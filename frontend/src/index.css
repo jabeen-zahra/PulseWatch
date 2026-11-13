@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#07090e] text-[#f0f6fc] min-h-screen overflow-x-hidden;
+  }
+}
+
+/* Glassmorphism & Neon Glow Styles */
+.glass-panel {
+  background: rgba(18, 23, 33, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(22, 28, 41, 0.85);
+  border-color: rgba(0, 245, 160, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(0, 245, 160, 0.15);
+}
+
+.neon-glow-emerald {
+  box-shadow: 0 0 20px -2px rgba(0, 245, 160, 0.45);
+}
+
+.neon-glow-cyan {
+  box-shadow: 0 0 20px -2px rgba(0, 210, 255, 0.45);
+}
+
+.grid-background {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
