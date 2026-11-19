@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  backend:
+    image: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/pulsewatch-backend:${IMAGE_TAG}
+    container_name: pulsewatch-backend-prod
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+      - DATABASE_URL=${DATABASE_URL:-sqlite+aiosqlite:///./pulsewatch.db}
+      - CORS_ORIGINS=["*"]
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/api/v1/healthz')\""]
+      interval: 15s
+      timeout: 3s
+      retries: 3
+    networks:
+      - pulsewatch-net
+
+  frontend:
+    image: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/pulsewatch-frontend:${IMAGE_TAG}
+    container_name: pulsewatch-frontend-prod
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:80/ || exit 1"]
+      interval: 15s
+      timeout: 3s
+      retries: 3
+    networks:
+      - pulsewatch-net
+
+networks:
+  pulsewatch-net:
+    driver: bridge
+
