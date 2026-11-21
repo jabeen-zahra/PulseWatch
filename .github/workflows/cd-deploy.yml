@@ -27,7 +27,7 @@ jobs:
       previous_tag: ${{ steps.get_prev_tag.outputs.prev_tag }}
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Configure AWS Credentials via OIDC (No Long-Lived Keys)
         uses: aws-actions/configure-aws-credentials@v4
@@ -88,7 +88,7 @@ jobs:
     needs: stage-11-ecr-push-and-deploy
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Execute Non-Trivial Smoke Verification Script
         id: smoke_test
