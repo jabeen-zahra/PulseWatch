@@ -1,7 +1,7 @@
 # ==========================================
 # Stage 1: Build Dependencies
 # ==========================================
-FROM python:3.11.10-alpine3.20 AS builder
+FROM python:3.13.3-alpine3.20 AS builder
 
 WORKDIR /build
 
@@ -18,7 +18,7 @@ RUN python -m venv /opt/venv && \
 # ==========================================
 # Stage 2: Final Minimal Runtime
 # ==========================================
-FROM python:3.11.10-alpine3.20 AS runtime
+FROM python:3.13.3-alpine3.20 AS runtime
 
 LABEL maintainer="PulseWatch Team <kaneezezahra313@gmail.com>" \
       version="1.0.0" \
