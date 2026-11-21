@@ -81,12 +81,11 @@ export const LandingHero: React.FC<{ onLaunchDashboard: () => void }> = ({ onLau
           </div>
           <h3 className="font-bold text-white text-base">Zero-Downtime Rollback</h3>
           <p className="text-xs text-slate-400 leading-relaxed">
-            Post-deploy smoke test executes against the live Load Balancer. Any probe failure triggers
-            an immediate automated rollback to the previous immutable ECR digest.
+            Post-deploy smoke test executes against the live Load Balancer. Any probe failure
+            triggers an immediate automated rollback to the previous immutable ECR digest.
           </p>
         </div>
       </div>
     </div>
   )
 }
-

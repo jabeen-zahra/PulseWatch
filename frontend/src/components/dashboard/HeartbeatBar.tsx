@@ -12,7 +12,7 @@ export const HeartbeatBar: React.FC<{ uptimePercentage?: number; latencyMs?: num
       day: 60 - i,
       status: isDegraded ? 'degraded' : 'operational',
       uptime: isDegraded ? 99.4 : 100,
-      latency: isDegraded ? 120 : Math.floor(latencyMs + (Math.sin(i) * 6)),
+      latency: isDegraded ? 120 : Math.floor(latencyMs + Math.sin(i) * 6),
     }
   })
 
@@ -62,4 +62,3 @@ export const HeartbeatBar: React.FC<{ uptimePercentage?: number; latencyMs?: num
     </div>
   )
 }
-

@@ -1,11 +1,17 @@
 import React from 'react'
 
-export const Logo: React.FC<{ className?: string; size?: number }> = ({ className = '', size = 32 }) => {
+export const Logo: React.FC<{ className?: string; size?: number }> = ({
+  className = '',
+  size = 32,
+}) => {
   return (
     <div className={`flex items-center gap-3 select-none ${className}`}>
       <div className="relative flex items-center justify-center">
         {/* Animated Radar Pulse Ring */}
-        <div className="absolute inset-0 rounded-xl bg-neonEmerald/20 animate-ping" style={{ animationDuration: '3s' }} />
+        <div
+          className="absolute inset-0 rounded-xl bg-neonEmerald/20 animate-ping"
+          style={{ animationDuration: '3s' }}
+        />
         <div className="relative rounded-xl bg-gradient-to-br from-charcoal to-surface border border-neonEmerald/40 p-2 shadow-[0_0_20px_-3px_rgba(0,245,160,0.5)]">
           <svg
             width={size}
@@ -45,9 +51,10 @@ export const Logo: React.FC<{ className?: string; size?: number }> = ({ classNam
             PROD
           </span>
         </div>
-        <p className="text-[10px] text-slate-400 font-mono tracking-wide">CLOUDWATCH OBSERVABILITY</p>
+        <p className="text-[10px] text-slate-400 font-mono tracking-wide">
+          CLOUDWATCH OBSERVABILITY
+        </p>
       </div>
     </div>
   )
 }
-

@@ -53,7 +53,6 @@ export const IsometricInfrastructure: React.FC = () => {
         >
           {/* Isometric Ground Grid Base */}
           <div className="w-[500px] h-[400px] rounded-3xl border border-neonEmerald/20 bg-gradient-to-br from-emerald-950/20 via-slate-900/40 to-transparent shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative grid-background">
-            
             {/* AZ-1A Boundary Box */}
             <div className="absolute top-8 left-8 w-[200px] h-[340px] rounded-2xl border border-dashed border-emerald-500/30 bg-emerald-950/10 p-4">
               <span className="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">
@@ -109,8 +108,8 @@ export const IsometricInfrastructure: React.FC = () => {
                   isFailed
                     ? 'bg-rose-950/80 border-rose-500 text-rose-300 shadow-[0_0_20px_rgba(244,63,94,0.4)]'
                     : selectedNode === 'node-1b'
-                    ? 'bg-purple-500/20 border-neonViolet shadow-[0_0_20px_rgba(139,92,246,0.4)] scale-105'
-                    : 'bg-slate-900/80 border-white/10 hover:border-purple-400/50'
+                      ? 'bg-purple-500/20 border-neonViolet shadow-[0_0_20px_rgba(139,92,246,0.4)] scale-105'
+                      : 'bg-slate-900/80 border-white/10 hover:border-purple-400/50'
                 }`}
                 style={{ transform: 'translateZ(30px)' }}
               >
@@ -215,4 +214,3 @@ export const IsometricInfrastructure: React.FC = () => {
     </div>
   )
 }
-

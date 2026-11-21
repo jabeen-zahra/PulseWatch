@@ -5,11 +5,8 @@ FROM python:3.11.10-alpine3.20 AS builder
 
 WORKDIR /build
 
-# Install build dependencies required for compiling wheels
-RUN apk add --no-cache \
-    gcc=13.2.1_git20240309-r0 \
-    musl-dev=1.2.5-r0 \
-    libffi-dev=3.4.6-r0
+# Install build dependencies
+RUN apk add --no-cache gcc musl-dev libffi-dev
 
 COPY pyproject.toml .
 
@@ -56,4 +53,3 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
     CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/v1/healthz', timeout=2)" || exit 1
 
 ENTRYPOINT ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
-

@@ -90,7 +90,8 @@ export const api = {
           service_name: 'Edge CDN Network',
           severity: 'minor',
           status: 'resolved',
-          description: 'Transit provider packet loss resulted in 45ms latency jitter. Auto-rerouted to secondary fiber partner.',
+          description:
+            'Transit provider packet loss resulted in 45ms latency jitter. Auto-rerouted to secondary fiber partner.',
           post_mortem: 'Failover threshold reduced to 30s in Route53 policy.',
           created_at: '2026-11-18T14:22:00Z',
           resolved_at: '2026-11-18T14:48:00Z',
@@ -141,4 +142,3 @@ export const api = {
     return await res.json()
   },
 }
-

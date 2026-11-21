@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" role="img" aria-label="PulseWatch: Autonomous Edge Observability & Cloud Reliability Engine">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#07090e"/>
+      <stop offset="50%" stop-color="#0b0f19"/>
+      <stop offset="100%" stop-color="#0e1322"/>
+    </linearGradient>
+
+    <!-- Brand Accent Gradient -->
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00f5a0"/>
+      <stop offset="50%" stop-color="#00d2ff"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+
+    <!-- Radial Glows -->
+    <radialGradient id="glowEmerald" cx="0.2" cy="0.3" r="0.6">
+      <stop offset="0%" stop-color="#00f5a0" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#00f5a0" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowViolet" cx="0.85" cy="0.7" r="0.65">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowCyan" cx="0.5" cy="0.9" r="0.5">
+      <stop offset="0%" stop-color="#00d2ff" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00d2ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Card Background -->
+    <linearGradient id="cardBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#141a29" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0d111c" stop-opacity="0.92"/>
+    </linearGradient>
+
+    <!-- Clip path for heartbeat sparkline -->
+    <clipPath id="radarClip">
+      <rect width="210" height="42" rx="6"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background Base Canvas -->
+  <rect width="1280" height="320" rx="20" fill="url(#bg)"/>
+  <rect width="1280" height="320" rx="20" fill="url(#glowEmerald)"/>
+  <rect width="1280" height="320" rx="20" fill="url(#glowViolet)"/>
+  <rect width="1280" height="320" rx="20" fill="url(#glowCyan)"/>
+
+  <!-- Border Outline -->
+  <rect x="0.5" y="0.5" width="1279" height="319" rx="19.5" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+
+  <!-- Bottom Accent Stripe -->
+  <rect y="315" width="1280" height="5" fill="url(#brand)"/>
+
+  <!-- ================= LEFT BRAND COLUMN ================= -->
+  <!-- Geometric Logo Symbol -->
+  <g transform="translate(84, 86)">
+    <!-- Outer Hex Shield Glow Box -->
+    <rect width="84" height="84" rx="22" fill="#0d111a" stroke="url(#brand)" stroke-width="2"/>
+    
+    <!-- Heartbeat Waveform inside Shield -->
+    <path d="M42 16 L22 26 V46 C22 58 31 66 42 70 C53 66 62 58 62 46 V26 Z" fill="none" stroke="#00f5a0" stroke-width="2.5" stroke-opacity="0.4"/>
+    <path d="M28 44 H34 L38 32 L46 54 L50 44 H56" fill="none" stroke="#00f5a0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="42" cy="44" r="3" fill="#00d2ff"/>
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(196, 0)">
+    <!-- Category Tag -->
+    <rect x="0" y="80" width="220" height="24" rx="12" fill="#00f5a0" fill-opacity="0.1" stroke="#00f5a0" stroke-opacity="0.3"/>
+    <circle cx="14" cy="92" r="4" fill="#00f5a0"/>
+    <text x="26" y="96" font-family="'JetBrains Mono', 'Segoe UI Mono', monospace" font-size="11" font-weight="700" fill="#00f5a0" letter-spacing="1">DEVSECOPS OBSERVABILITY</text>
+
+    <!-- Main Title -->
+    <text x="0" y="156" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="58" font-weight="700" fill="#f8fafc" letter-spacing="-1.5">
+      Pulse<tspan fill="#00f5a0">Watch</tspan>
+    </text>
+
+    <!-- Subtitle / Mission Statement -->
+    <text x="0" y="196" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="400" fill="#94a3b8">
+      Autonomous edge observability, multi-AZ resilience &amp; self-healing cloud pipelines.
+    </text>
+
+    <!-- Engineering Specs Metadata -->
+    <text x="0" y="234" font-family="'JetBrains Mono', 'Segoe UI Mono', monospace" font-size="12" font-weight="600" fill="#64748b" letter-spacing="2">
+      AWS DUAL-AZ VPC  ·  ALB + ASG  ·  12-STAGE PIPELINE  ·  IMMUTABLE ECR  ·  SSM
+    </text>
+  </g>
+
+  <!-- ================= RIGHT UI SHOWCASE WIDGET ================= -->
+  <g transform="translate(860, 52)">
+    <!-- Floating Glass Canvas Panel -->
+    <rect width="340" height="216" rx="18" fill="url(#cardBg)" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1.5"/>
+
+    <!-- Panel Header: Simulated Live Edge Probe Status -->
+    <g transform="translate(20, 20)">
+      <!-- Active Green Ping Indicator -->
+      <circle cx="8" cy="8" r="5" fill="#00f5a0"/>
+      <circle cx="8" cy="8" r="8" fill="#00f5a0" fill-opacity="0.25"/>
+      <text x="24" y="12" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#f1f5f9">AWS CLUSTER: US-EAST-1</text>
+
+      <!-- Live SLA Badge -->
+      <rect x="220" y="0" width="76" height="18" rx="9" fill="#00f5a0" fill-opacity="0.15" stroke="#00f5a0" stroke-opacity="0.4"/>
+      <text x="233" y="13" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#00f5a0">99.99% SLA</text>
+    </g>
+
+    <!-- Topology Micro-Diagram: ALB to 2 AZ Targets -->
+    <g transform="translate(20, 52)">
+      <!-- ALB Ingress Node -->
+      <rect x="0" y="18" width="80" height="34" rx="8" fill="#0f172a" stroke="#00d2ff" stroke-width="1.2"/>
+      <text x="14" y="32" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#00d2ff">AWS ALB</text>
+      <text x="14" y="44" font-family="'JetBrains Mono', monospace" font-size="8" fill="#64748b">Port 443/80</text>
+
+      <!-- Connection Lines -->
+      <path d="M80 35 L120 22 L150 22" fill="none" stroke="#00f5a0" stroke-width="1.5" stroke-dasharray="3,3"/>
+      <path d="M80 35 L120 48 L150 48" fill="none" stroke="#00f5a0" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+      <!-- Target AZ-1A -->
+      <rect x="150" y="8" width="146" height="28" rx="6" fill="#022c22" stroke="#00f5a0" stroke-width="1"/>
+      <circle cx="162" cy="22" r="3" fill="#00f5a0"/>
+      <text x="172" y="24" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#a7f3d0">AZ-1a Private (ASG)</text>
+
+      <!-- Target AZ-1B -->
+      <rect x="150" y="42" width="146" height="28" rx="6" fill="#022c22" stroke="#00f5a0" stroke-width="1"/>
+      <circle cx="162" cy="56" r="3" fill="#00f5a0"/>
+      <text x="172" y="58" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#a7f3d0">AZ-1b Private (ASG)</text>
+    </g>
+
+    <!-- 60-Bar Heartbeat Status Strip (Better Stack Inspired) -->
+    <g transform="translate(20, 142)">
+      <text x="0" y="-8" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="#64748b">SYNTHETIC HEARTBEAT (LAST 60 MIN)</text>
+      <g transform="translate(0, 0)">
+        <!-- Generate 30 consecutive healthy pulse bars -->
+        <rect x="0" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="9" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="18" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="27" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="36" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="45" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="54" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="63" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="72" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="81" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="90" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="99" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="108" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="117" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="126" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="135" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="144" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="153" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="162" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="171" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="180" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="189" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="198" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="207" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="216" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="225" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="234" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="243" y="0" width="6" height="22" rx="3" fill="#00d2ff"/>
+        <rect x="252" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="261" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="270" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="279" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+        <rect x="288" y="0" width="6" height="22" rx="3" fill="#00f5a0"/>
+      </g>
+    </g>
+
+    <!-- Footer Stats Inside Panel -->
+    <g transform="translate(20, 196)">
+      <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#00f5a0">P99: 14.2ms</text>
+      <text x="96" y="0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="#94a3b8">ERR: 0.00%</text>
+      <text x="194" y="0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#00d2ff">ROLLBACK: READY</text>
+    </g>
+  </g>
+</svg>

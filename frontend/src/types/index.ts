@@ -45,4 +45,3 @@ export interface EdgeRegion {
   latency_ms: number
   status: 'operational' | 'degraded'
 }
-

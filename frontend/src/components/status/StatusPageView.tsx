@@ -70,22 +70,32 @@ export const StatusPageView: React.FC = () => {
         <div className="space-y-4">
           <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-white">November 18, 2026 - Edge DNS Routing Latency</span>
-              <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase">Resolved</span>
+              <span className="text-xs font-bold text-white">
+                November 18, 2026 - Edge DNS Routing Latency
+              </span>
+              <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase">
+                Resolved
+              </span>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Between 14:20 and 14:45 UTC, our third-party edge transit partner experienced intermittent fiber degradation.
-              Automated Route53 health checks shifted all incoming traffic to our secondary transit within 40 seconds.
+              Between 14:20 and 14:45 UTC, our third-party edge transit partner experienced
+              intermittent fiber degradation. Automated Route53 health checks shifted all incoming
+              traffic to our secondary transit within 40 seconds.
             </p>
           </div>
 
           <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-white">November 08, 2026 - Scheduled Database Minor Version Upgrade</span>
-              <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase">Completed</span>
+              <span className="text-xs font-bold text-white">
+                November 08, 2026 - Scheduled Database Minor Version Upgrade
+              </span>
+              <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase">
+                Completed
+              </span>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Zero-downtime rolling maintenance executed successfully across PostgreSQL multi-AZ cluster. No requests were dropped.
+              Zero-downtime rolling maintenance executed successfully across PostgreSQL multi-AZ
+              cluster. No requests were dropped.
             </p>
           </div>
         </div>
@@ -93,4 +103,3 @@ export const StatusPageView: React.FC = () => {
     </div>
   )
 }
-

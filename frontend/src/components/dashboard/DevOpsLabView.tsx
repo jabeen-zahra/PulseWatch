@@ -42,10 +42,12 @@ export const DevOpsLabView: React.FC = () => {
       {/* Header Banner */}
       <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/60 via-slate-900 to-black border border-purple-500/30">
         <h2 className="text-xl font-bold text-white flex items-center gap-2">
-          <ShieldAlert className="w-5 h-5 text-neonViolet" /> Live DevOps & Resilience Validation Lab
+          <ShieldAlert className="w-5 h-5 text-neonViolet" /> Live DevOps & Resilience Validation
+          Lab
         </h2>
         <p className="text-xs text-slate-400 font-mono mt-1">
-          Interactive controls designed to demonstrate Requirement 4 (Failure Recovery), Requirement 5 (Auto-Scaling), and Requirement 9 (Observability & Alarms).
+          Interactive controls designed to demonstrate Requirement 4 (Failure Recovery), Requirement
+          5 (Auto-Scaling), and Requirement 9 (Observability & Alarms).
         </p>
       </div>
 
@@ -68,8 +70,9 @@ export const DevOpsLabView: React.FC = () => {
           </div>
 
           <p className="text-xs text-slate-400 leading-relaxed">
-            Forces the backend <code className="text-neonEmerald">/api/v1/healthz</code> endpoint to return HTTP 503.
-            Use this during your viva demonstration to watch the AWS Application Load Balancer deregister the instance and fire the CloudWatch SNS alert!
+            Forces the backend <code className="text-neonEmerald">/api/v1/healthz</code> endpoint to
+            return HTTP 503. Use this during your viva demonstration to watch the AWS Application
+            Load Balancer deregister the instance and fire the CloudWatch SNS alert!
           </p>
 
           <button
@@ -110,8 +113,9 @@ export const DevOpsLabView: React.FC = () => {
           </div>
 
           <p className="text-xs text-slate-400 leading-relaxed">
-            Dispatches high-throughput CPU mathematical hashing iterations to drive instance utilization above the 70% Auto Scaling threshold,
-            triggering AWS ASG scale-out from 2 to 4 instances.
+            Dispatches high-throughput CPU mathematical hashing iterations to drive instance
+            utilization above the 70% Auto Scaling threshold, triggering AWS ASG scale-out from 2 to
+            4 instances.
           </p>
 
           <button
@@ -146,7 +150,9 @@ export const DevOpsLabView: React.FC = () => {
           </div>
 
           <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-2">
-            <div className="text-slate-400 font-bold uppercase text-[10px]">Load Balancer & Auto Scaling</div>
+            <div className="text-slate-400 font-bold uppercase text-[10px]">
+              Load Balancer & Auto Scaling
+            </div>
             <div className="text-white">ALB: Internet-facing (2 AZs)</div>
             <div className="text-slate-400">Min: 2 | Max: 4 | Desired: 2</div>
             <div className="text-cyan-300">Target Tracking: 70% CPU</div>
@@ -163,4 +169,3 @@ export const DevOpsLabView: React.FC = () => {
     </div>
   )
 }
-

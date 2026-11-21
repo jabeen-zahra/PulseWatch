@@ -2,7 +2,16 @@ import React, { useState, useEffect } from 'react'
 import { Monitor, Incident, SystemMetrics, EdgeRegion } from '../../types'
 import { api } from '../../lib/api'
 import { HeartbeatBar } from './HeartbeatBar'
-import { Activity, Globe, ShieldCheck, AlertTriangle, Play, RefreshCw, Cpu, Layers } from 'lucide-react'
+import {
+  Activity,
+  Globe,
+  ShieldCheck,
+  AlertTriangle,
+  Play,
+  RefreshCw,
+  Cpu,
+  Layers,
+} from 'lucide-react'
 
 export const DashboardView: React.FC = () => {
   const [monitors, setMonitors] = useState<Monitor[]>([])
@@ -43,7 +52,9 @@ export const DashboardView: React.FC = () => {
     } catch {
       // simulate latency update
       setMonitors((prev) =>
-        prev.map((m) => (m.id === id ? { ...m, latency_ms: Math.floor(Math.random() * 25) + 12 } : m))
+        prev.map((m) =>
+          m.id === id ? { ...m, latency_ms: Math.floor(Math.random() * 25) + 12 } : m
+        )
       )
     } finally {
       setPingingId(null)
@@ -251,4 +262,3 @@ export const DashboardView: React.FC = () => {
     </div>
   )
 }
-

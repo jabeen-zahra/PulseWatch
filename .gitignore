@@ -48,5 +48,6 @@ make_commits.ps1
 
 # Environment secrets
 .env
+*.tsbuildinfo
 .env.*
 !.env.example

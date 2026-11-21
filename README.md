@@ -1,240 +1,331 @@
 <p align="center">
-  <img src="docs/assets/logo.svg" alt="PulseWatch Logo" width="80" height="80">
-</p>
-
-<h1 align="center">PulseWatch</h1>
-
-<p align="center">
-  <strong>Next-Gen Cloud Uptime & Edge Latency Observability Engine</strong><br>
-  <em>A High-Availability, Fault-Tolerant Microservices Platform Deployed with a 12-Stage DevSecOps Pipeline on AWS</em>
+  <img src="docs/assets/banner.svg" alt="PulseWatch: Autonomous Edge Observability & Cloud Reliability Engine" width="100%">
 </p>
 
 <p align="center">
   <img alt="React" src="https://img.shields.io/badge/React_18-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+  <img alt="Vite" src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white">
+  <img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind_3-0F172A?style=for-the-badge&logo=tailwindcss&logoColor=38BDF8">
   <img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white">
+  <img alt="Python" src="https://img.shields.io/badge/Python_3.11-3776AB?style=for-the-badge&logo=python&logoColor=white">
+  <img alt="Docker" src="https://img.shields.io/badge/Docker_Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white">
   <img alt="AWS ALB" src="https://img.shields.io/badge/AWS_ALB-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white">
-  <img alt="AWS AutoScaling" src="https://img.shields.io/badge/AWS_ASG-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white">
-  <img alt="Docker" src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white">
+  <img alt="CloudWatch" src="https://img.shields.io/badge/CloudWatch-FF4F8B?style=for-the-badge&logo=amazon-cloudwatch&logoColor=white">
   <img alt="Trivy" src="https://img.shields.io/badge/Trivy-00A4A6?style=for-the-badge&logo=aquasec&logoColor=white">
   <img alt="Snyk" src="https://img.shields.io/badge/Snyk-4C158A?style=for-the-badge&logo=snyk&logoColor=white">
   <img alt="Gitleaks" src="https://img.shields.io/badge/Gitleaks-Redacted-red?style=for-the-badge">
 </p>
 
----
-
-## 🌟 Executive Summary & Product Vision
-
-**PulseWatch** is an enterprise-grade cloud observability and synthetic uptime monitoring platform inspired by **Better Stack**, **Datadog**, and **Incident.io**. It is architected from the ground up to embody the core tenets of modern **DevSecOps**: end-to-end automation, shift-left security, high availability across multiple AWS Availability Zones, autonomous auto-scaling under load, and instant self-healing rollbacks.
-
-### Key Capabilities
-* **Interactive 3D Infrastructure Topology:** Real-time visualization of dual-AZ VPC, Application Load Balancers, EC2 auto-scaling instances, and database replicas.
-* **Better Stack-Style Heartbeat Strips:** 60-day interactive uptime status bars with hover latency metrics and SLA verification.
-* **Global Edge Radar:** Multi-region synthetic pings across `us-east-1`, `eu-central-1`, `ap-south-1`, `ap-northeast-1`, and `sa-east-1`.
-* **One-Click Public Status Page:** Live SLA status portal displaying component health and historical incident post-mortems.
-* **DevOps Failure & Scaling Simulator:** Built-in interactive lab allowing evaluators to inject 503 faults, trigger CloudWatch/SNS alarms, and dispatch k6 load spikes to observe ASG scale-out.
+**PulseWatch** is an enterprise-grade cloud observability and synthetic uptime monitoring platform engineered for
+mission-critical microservices. Inspired by industry standards like **Better Stack**, **Datadog**, and **Incident.io**,
+PulseWatch continuously monitors distributed endpoints across global AWS edge locations, provides instant incident
+triage, visualizes infrastructure topology in 3D, and executes autonomous self-healing rollbacks when health checks degrade.
 
 ---
 
-## 👥 Engineering Team & Contributions
+## What's inside
 
-| Member | Email | Role & Core Responsibilities |
-| :--- | :--- | :--- |
-| **Jabeen Zahra** | `kaneezezahra313@gmail.com` | **Architecture, Microservices & Frontend Platform Lead**<br>• Designed the React 18 frontend with Better Stack dark-glassmorphism and 3D topology.<br>• Engineered FastAPI REST microservice, health probes (`/healthz`, `/live`, `/ready`).<br>• Built Stages 1–4 of GitHub Actions CI pipeline and root Docker Compose. |
-| **Fatima Ijaz** | `f6618568@gmail.com` | **DevSecOps, Security Auditing & Container Hardening Specialist**<br>• Hardened multi-stage Dockerfiles with unprivileged users (`appuser`, `nginx`).<br>• Integrated Gitleaks, Snyk dependency scanner, and Trivy container vulnerability audits.<br>• Authored `SECURITY.md`, ShellCheck-compliant `scripts/backup_db.sh`, and Dependabot policy. |
-| **Mirfaq Javaid** | `mirfaqjavaid@gmail.com` | **Cloud Infrastructure, Observability & Continuous Delivery Lead**<br>• Engineered AWS Dual-AZ VPC, Internet Gateway, ALB, and Auto Scaling Group.<br>• Built OIDC IAM authentication, Amazon ECR tag immutability, and rolling deployment.<br>• Created Stage 12 `scripts/smoke_test.sh` with automated rollback and k6 load test script. |
+| | Capability | Details |
+|---|---|---|
+| <img src="docs/assets/icons/activity.svg" width="20"> | **Autonomous edge heartbeats** | Synthetic HTTP, SSL, and ICMP probes dispatched with sub-millisecond resolution and interactive 60-interval status strips. |
+| <img src="docs/assets/icons/radar.svg" width="20"> | **Global edge latency radar** | Multi-region latency probes across `us-east-1`, `eu-central-1`, `ap-south-1`, `ap-northeast-1`, and `sa-east-1`. |
+| <img src="docs/assets/icons/topology.svg" width="20"> | **3D interactive topology** | Three-dimensional visualizer of dual-AZ VPC, ALB routing, EC2 instances, and PostgreSQL primary/replica nodes. |
+| <img src="docs/assets/icons/radio.svg" width="20"> | **Public SLA status portal** | Client-facing status page tracking uptime guarantees, operational incidents, and SLA compliance readouts. |
+| <img src="docs/assets/icons/sliders.svg" width="20"> | **DevOps & chaos lab** | Interactive evaluation playground for injecting 503 faults, triggering CloudWatch alarms, and simulating k6 CPU load spikes. |
+| <img src="docs/assets/icons/shield.svg" width="20"> | **Shift-left DevSecOps** | 12-stage mandatory pipeline: Gitleaks secret scan, ESLint, Prettier, Hadolint, Pytest (>80% cov), SonarCloud, Snyk, and Trivy CVE scanner. |
+| <img src="docs/assets/icons/container.svg" width="20"> | **Hardened containerization** | Alpine-based multi-stage Docker builds, non-root system users (`appuser`, `nginx`), immutable ECR digests with semantic and commit-SHA tags. |
+| <img src="docs/assets/icons/cloud.svg" width="20"> | **High availability & ASG** | Deployed across two Availability Zones in private subnets behind an Application Load Balancer with target-tracking auto-scaling (70% CPU). |
+| <img src="docs/assets/icons/terminal.svg" width="20"> | **Automated smoke rollback** | Stage 12 post-deploy smoke verification; any probe failure immediately triggers an automatic rollback to the previous immutable ECR digest. |
+| <img src="docs/assets/icons/bell.svg" width="20"> | **CloudWatch observability** | Centralized structured logging, four-metric dashboard (request rate, errors, latency, CPU/memory), and automated SNS incident alerting. |
+| <img src="docs/assets/icons/database.svg" width="20"> | **Resilient data tier** | Relational telemetry store with atomic snapshots, SHA-256 cryptographic verification, and automated retention pruning via `scripts/backup_db.sh`. |
 
 ---
 
-## 🏛️ System Architecture
+## Architecture
 
 ```mermaid
-flowchart TD
-    subgraph Internet ["Public Internet"]
-        Client(["Users / External Probes"])
-        k6(["k6 Load Stress Engine"])
-    end
-
-    subgraph AWS_VPC ["AWS Virtual Private Cloud (10.0.0.0/16)"]
-        IGW["Internet Gateway"]
-        
-        subgraph Public_Subnets ["Public Subnets (2 Availability Zones)"]
-            ALB["Application Load Balancer<br/>(Round-Robin, TLS :443 / :80)<br/>Health: /api/v1/healthz"]
-            NAT_A["NAT Gateway us-east-1a"]
-            NAT_B["NAT Gateway us-east-1b"]
+flowchart LR
+    Client(["External Users / k6 Stress Engine"]) -->|"HTTPS :443 / :80"| IGW["Internet Gateway"]
+    IGW --> ALB["Application Load Balancer<br/>Dual-AZ Public Subnets<br/>Health Check: /api/v1/healthz"]
+    
+    subgraph VPC ["AWS Virtual Private Cloud (10.0.0.0/16)"]
+        subgraph AZ_1A ["Availability Zone: us-east-1a"]
+            NAT_A["NAT Gateway 1A<br/>(Public Subnet 10.0.1.0/24)"]
+            EC2_A["EC2 Instance 1 (ASG)<br/>(Private Subnet 10.0.10.0/24)<br/>Frontend Nginx + FastAPI"]
+            DB_A[("PostgreSQL Primary<br/>Port 5432 (Write-Ready)")]
         end
 
-        subgraph Private_Subnets ["Private Subnets (No Ingress from Internet)"]
-            subgraph ASG ["Auto Scaling Group (Min: 2, Max: 4, Target: 70% CPU)"]
-                EC2_A["EC2 Instance 1 (us-east-1a)<br/>Docker: Frontend + Backend"]
-                EC2_B["EC2 Instance 2 (us-east-1b)<br/>Docker: Frontend + Backend"]
-            end
-            
-            DB_Primary[("PostgreSQL Primary<br/>us-east-1a (Port 5432)")]
-            DB_Replica[("PostgreSQL Replica<br/>us-east-1b (Read Only)")]
+        subgraph AZ_1B ["Availability Zone: us-east-1b"]
+            NAT_B["NAT Gateway 1B<br/>(Public Subnet 10.0.2.0/24)"]
+            EC2_B["EC2 Instance 2 (ASG)<br/>(Private Subnet 10.0.20.0/24)<br/>Frontend Nginx + FastAPI"]
+            DB_B[("PostgreSQL Replica<br/>Port 5432 (Read-Only)")]
         end
     end
 
-    subgraph Observability ["AWS Observability & Alarms"]
-        CW["Amazon CloudWatch<br/>(Metrics & Centralized Logs)"]
-        Alarm["CloudWatch Alarm<br/>Target5XXCount > 0 OR CPU > 70%"]
-        SNS["Amazon SNS Topic<br/>(Email & Slack Incident Alerts)"]
+    ALB -->|"Target Group Forward"| EC2_A
+    ALB -->|"Target Group Forward"| EC2_B
+    EC2_A --> DB_A
+    EC2_B --> DB_B
+    EC2_A -.->|"Outbound egress via NAT"| NAT_A
+    EC2_B -.->|"Outbound egress via NAT"| NAT_B
+
+    subgraph Observability ["AWS Monitoring, Logging & Alarms"]
+        CW["Amazon CloudWatch<br/>Centralized Logs & Metrics"]
+        Alarm["CloudWatch Alarms<br/>Target5XXCount > 0 OR CPU > 70%"]
+        SNS["Amazon SNS Alerts<br/>Email & PagerDuty"]
     end
 
-    Client --> IGW
-    k6 --> IGW
-    IGW --> ALB
-    ALB -->|"HTTP Forward"| EC2_A
-    ALB -->|"HTTP Forward"| EC2_B
-    EC2_A --> DB_Primary
-    EC2_B --> DB_Replica
-    EC2_A -.->|"Outbound updates via NAT"| NAT_A
-    EC2_B -.->|"Outbound updates via NAT"| NAT_B
-    ALB -.->|"Health Telemetry"| CW
-    EC2_A -.->|"Logs & CPU Metrics"| CW
+    ALB -.->|"Metrics & Logs"| CW
+    EC2_A -.->|"Telemetry & Health"| CW
+    EC2_B -.->|"Telemetry & Health"| CW
     CW --> Alarm
     Alarm --> SNS
 ```
 
----
-
-## 🛡️ Required 12-Stage DevSecOps Pipeline
-
 ```mermaid
-flowchart LR
-    subgraph CI ["Continuous Integration (Runs on Every Push & PR)"]
-        S1["1. Gitleaks<br/>(Secret Scan)"] --> S2["2. ESLint<br/>(Code Lint)"]
-        S2 --> S3["3. Prettier<br/>(Format Check)"]
-        S3 --> S4["4. Hadolint<br/>(Dockerfile Lint)"]
-        S4 --> S5["5. Pytest<br/>(Unit Tests >80%)"]
-        S5 --> S6["6. SonarCloud<br/>(Static Analysis)"]
-        S6 --> S7["7. Snyk<br/>(Dep Audit)"]
-        S7 --> S8["8. Docker Build<br/>(Multi-stage)"]
-        S8 --> S9["9. Trivy<br/>(Image Scan)"]
-        S9 --> S10["10. Verification<br/>(Approval Gate)"]
-    end
+sequenceDiagram
+    autonumber
+    participant Dev as Engineering Team
+    participant GH as GitHub Actions CI/CD
+    participant ECR as Amazon ECR (Immutable)
+    participant SSM as AWS Systems Manager
+    participant ALB as Application Load Balancer
+    participant EC2 as EC2 Instances (ASG)
 
-    subgraph CD ["Continuous Delivery (Runs on Merge to main)"]
-        S10 --> S11["11. Amazon ECR Push<br/>+ Rolling Deploy via SSM"]
-        S11 --> S12["12. ALB Smoke Test<br/>(scripts/smoke_test.sh)"]
-        S12 -->|Success| LiveApp(["Live Production"])
-        S12 -->|Failure| Rollback["Auto Rollback<br/>(Previous ECR Digest)"]
+    Dev->>GH: Push / PR to main
+    GH->>GH: Execute Stages 1–10 (Security & Quality Gates)
+    Note over GH: Failing stage terminates pipeline immediately
+    Dev->>GH: Merge Approved PR
+    GH->>ECR: Stage 11: Build & push immutable image (v1.0.0-sha)
+    GH->>SSM: Trigger Rolling Instance Refresh
+    SSM->>EC2: Pull immutable image from ECR & restart containers
+    EC2->>ALB: Register target and enter initial health state
+    GH->>ALB: Stage 12: Run scripts/smoke_test.sh against ALB URL
+    alt Smoke test succeeds (HTTP 200, Ready, Latency < 300ms)
+        ALB-->>GH: Status 200 OK
+        GH-->>Dev: Deployment Succeeded
+    else Smoke test fails (HTTP 503 or probe timeout)
+        ALB-->>GH: Probe Failure
+        GH->>SSM: Auto-Rollback: Deploy previous stable image digest
+        SSM->>EC2: Restore previous container version
+        GH-->>Dev: Alert: Smoke test failed. Automated rollback executed.
     end
 ```
 
-### Pipeline Stage Details
-1. **Secret Scanning:** Gitleaks scans the complete repository history. Fails on any exposed secret.
-2. **Linting:** ESLint enforces clean React & TypeScript code quality without warnings.
-3. **Formatting Check:** Prettier verifies code formatting consistency across the repository.
-4. **Dockerfile Linting:** Hadolint inspects Dockerfiles against container security best practices.
-5. **Unit Tests & Coverage:** Pytest executes test suite requiring **>= 80% code coverage**.
-6. **Static Analysis:** SonarCloud verifies code complexity, maintainability, and security hotspots.
-7. **Dependency Scanning:** Snyk audits Python and Node packages. Fails on any High/Critical CVE.
-8. **Container Image Build:** Docker Buildx compiles multi-stage Alpine images.
-9. **Container Image Scan:** Trivy scans image layers with `exit-code: 1` on High/Critical vulnerabilities.
-10. **Pre-Deployment Gate:** Gate check verifying all 9 security and quality stages passed before merge.
-11. **Continuous Delivery:** Authenticates to AWS via **OIDC** (no long-lived keys), pushes semantic-tagged immutable image (`v1.0.0-<SHA>`) to Amazon ECR, and triggers rolling instance refresh.
-12. **Automated Smoke Test & Auto-Rollback:** `scripts/smoke_test.sh` executes against the live ALB. If probes fail, the workflow initiates an automatic rollback to the previous stable ECR image digest.
+---
+
+## Required 12-Stage DevSecOps Pipeline
+
+The deployment pipeline is partitioned into 10 pre-merge gates and 2 post-merge deployment stages. Security is enforced as code: any High or Critical finding immediately halts the workflow.
+
+```mermaid
+flowchart TD
+    subgraph CI ["Continuous Integration (Runs on Every Push and Pull Request)"]
+        S01["Stage 01: Secret Scanning<br/>Gitleaks (Full git history)"]
+        S02["Stage 02: Code Linting<br/>ESLint (TypeScript & React)"]
+        S03["Stage 03: Formatting Check<br/>Prettier (Code style consistency)"]
+        S04["Stage 04: Dockerfile Linting<br/>Hadolint (Security best practices)"]
+        S05["Stage 05: Automated Unit Tests<br/>Pytest with coverage report (>= 80%)"]
+        S06["Stage 06: Static Code Analysis<br/>SonarCloud (Quality gate enforcement)"]
+        S07["Stage 07: Dependency Scanning<br/>Snyk Open Source (High/Critical CVEs)"]
+        S08["Stage 08: Container Image Build<br/>Docker Buildx (Multi-stage cache)"]
+        S09["Stage 09: Image Vulnerability Scan<br/>Trivy (Zero High/Critical CVEs)"]
+        S10["Stage 10: Status Verification<br/>Required check blocking merge"]
+        
+        S01 --> S02 --> S03 --> S04 --> S05 --> S06 --> S07 --> S08 --> S09 --> S10
+    end
+
+    subgraph CD ["Continuous Delivery (Runs on Merge to main)"]
+        S11["Stage 11: Versioned ECR Push & Deploy<br/>OIDC IAM auth, immutable semantic tag, SSM rolling refresh"]
+        S12["Stage 12: Live Smoke Test & Rollback<br/>scripts/smoke_test.sh against ALB. Auto-rollback on failure"]
+        
+        S10 --> S11 --> S12
+    end
+```
+
+### Pipeline Stage Specification Matrix
+
+| Stage | Name | Target / Tool | Enforcement Threshold |
+| :---: | :--- | :--- | :--- |
+| **01** | Secret Scanning | `gitleaks/gitleaks-action@v2` | Zero unencrypted secrets in full git history |
+| **02** | Code Linting | ESLint 8 (`eslint-plugin-react`) | Zero lint errors and zero warnings (`--max-warnings 0`) |
+| **03** | Formatting Check | Prettier (`prettier --check`) | 100% adherence to repository style specification |
+| **04** | Dockerfile Linting | `hadolint/hadolint-action@v3.1.0` | Zero errors on multi-stage instructions and root user checks |
+| **05** | Automated Tests | Pytest + `pytest-cov` | All unit tests pass with **coverage >= 80%** |
+| **06** | Static Analysis | SonarCloud Quality Gate | Passed Quality Gate (A rating, zero security hotspots) |
+| **07** | Dependency Scan | Snyk (`snyk/actions/python` & `node`) | Zero High or Critical CVEs in dependencies |
+| **08** | Image Build | Docker Buildx (`docker/build-push-action`) | Deterministic multi-stage build using pinned Alpine digests |
+| **09** | Image Scan | Aquasec Trivy (`aquasecurity/trivy-action`) | `exit-code: 1` on any High or Critical image vulnerability |
+| **10** | Branch Protection | GitHub Actions Status Check | All 9 stages must be green before PR merge is permitted |
+| **11** | Immutable Delivery | AWS OIDC + Amazon ECR + AWS SSM | Semantic tag (`v1.0.0`) + git commit SHA with tag immutability |
+| **12** | Live Smoke Test | `scripts/smoke_test.sh` | Health probe `/api/v1/healthz` 200 OK + P99 latency < 300ms |
 
 ---
 
-## ⚡ Non-Trivial Shell Scripts (Requirement 2 & 12)
+## Repository Layout
 
-Both shell scripts strictly enforce `set -euo pipefail` and are 100% ShellCheck clean:
+```
+pulsewatch/
+├── .github/
+│   ├── dependabot.yml           # Automated daily dependency vulnerability tracking
+│   └── workflows/
+│       ├── devsecops-ci.yml     # Stages 1 to 10: Mandatory pull request validation
+│       ├── cd-deploy.yml        # Stage 11 & 12: ECR push, rolling deploy & smoke test
+│       └── rollback.yml         # Manual emergency rollback workflow with image tag input
+├── frontend/                    # React 18 + Vite + Tailwind CSS + Lucide
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── 3d/              # Isometric 3D AWS infrastructure topology
+│   │   │   ├── dashboard/       # Telemetry studio, heartbeat strips & chaos lab
+│   │   │   ├── landing/         # Marketing hero and capability pillars
+│   │   │   ├── status/          # Public SLA status portal and incident timeline
+│   │   │   └── ui/              # Reusable glassmorphic design system
+│   │   ├── lib/api.ts           # Type-safe API client interface
+│   │   └── types/index.ts       # Domain telemetry contracts
+│   ├── nginx.conf               # Hardened unprivileged Nginx reverse proxy config
+│   └── Dockerfile               # Multi-stage unprivileged Alpine container
+├── backend/                     # FastAPI asynchronous observability microservice
+│   ├── app/
+│   │   ├── api/v1/              # Endpoints: /healthz, /ready, /monitors, /metrics
+│   │   ├── core/                # Application configuration & security settings
+│   │   ├── models/              # SQLAlchemy relational models
+│   │   └── schemas/             # Pydantic validation schemas
+│   ├── tests/                   # Pytest test suite enforcing >= 80% coverage
+│   └── Dockerfile               # Multi-stage Alpine container running as 'appuser'
+├── infra/                       # Cloud infrastructure definitions
+│   ├── docker-compose.yml       # Local development stack
+│   └── docker-compose.prod.yml  # Production multi-service stack for EC2 ASG instances
+├── scripts/                     # Non-trivial shell & verification scripts
+│   ├── smoke_test.sh            # Post-deploy health probe with automated rollback trigger
+│   ├── backup_db.sh             # Atomic SQLite snapshot with SHA-256 integrity check
+│   └── load_test.js             # k6 auto-scaling load spike script (CPU > 70%)
+├── docs/assets/                 # Vector banner, custom SVG icons & architecture assets
+├── SECURITY.md                  # Vulnerability disclosure protocol & scanner baselines
+└── docker-compose.yml           # Root one-command local developer entrypoint
+```
 
-1. **`scripts/smoke_test.sh` (Post-Deployment Smoke Verification & Rollback Trigger):**
-   * Validates ALB health probe `/api/v1/healthz`.
-   * Verifies container readiness `/api/v1/ready`.
-   * Executes functional synthetic monitor creation transaction.
-   * Asserts round-trip latency SLA is below 300ms.
-   * Exits with code `1` upon probe failure to trigger GitHub Actions auto-rollback.
-2. **`scripts/backup_db.sh` (Automated Database Backup, Integrity & Rotation):**
-   * Creates atomic timestamped snapshots.
-   * Generates and verifies cryptographic SHA-256 checksums.
-   * Enforces 7-day retention policy by pruning stale snapshots.
-3. **`scripts/load_test.js` (k6 Auto-Scaling Load Script):**
-   * Spikes virtual users from 50 to 400 to exceed 70% CPU target, forcing AWS ASG to scale out from 2 to 4 instances.
+Each tier interacts strictly through validated contracts:
+* **Frontend ⇄ Backend:** REST API contract validated via OpenAPI schemas (`/api/v1`).
+* **Backend ⇄ Database:** SQLAlchemy ORM layer with atomic migrations and transactional safety.
+* **Pipeline ⇄ AWS Infrastructure:** Short-lived GitHub OIDC authentication; zero hardcoded IAM keys in repository.
 
 ---
 
-## 🚀 Local Quickstart Guide
+## Quick Start
 
 ### Prerequisites
-* Docker & Docker Compose v2
+* Docker & Docker Compose v2 installed locally.
 
 ```bash
 # 1. Clone repository
 git clone https://github.com/jabeen-zahra/PulseWatch.git
 cd PulseWatch
 
-# 2. Launch complete microservices stack with 1 command
+# 2. Launch the complete containerized stack locally
 docker compose up -d --build
 
-# 3. Access web interfaces
-# Frontend Dashboard: http://localhost:80 (or http://localhost:3000)
-# Backend OpenAPI Docs: http://localhost:8000/docs
-# Health Probe: http://localhost:8000/api/v1/healthz
+# 3. Access local endpoints
+# Frontend Studio & Status Page: http://localhost:80
+# Backend OpenAPI Documentation: http://localhost:8000/docs
+# Live Health Probe Endpoint:    http://localhost:8000/api/v1/healthz
 ```
 
 ---
 
-## ☁️ AWS Production Deployment & Rebuild Guide
+## Shell Script Automation
 
-1. **VPC & Subnets:**
-   * Create VPC CIDR `10.0.0.0/16`.
-   * Public Subnets: `10.0.1.0/24` (AZ-1A), `10.0.2.0/24` (AZ-1B).
-   * Private Subnets: `10.0.10.0/24` (AZ-1A), `10.0.20.0/24` (AZ-1B).
-   * Attach Internet Gateway to Public Subnets; create NAT Gateways in each AZ for private outbound access.
+The project includes two production-grade shell scripts and one k6 stress test script, each strictly adhering to `set -euo pipefail` and passing ShellCheck audits:
+
+### 1. Post-Deployment Smoke Verification (`scripts/smoke_test.sh`)
+* **Pipeline Integration:** Executed automatically during Stage 12 of the CD workflow.
+* **Checks Executed:**
+  1. Polls ALB health endpoint `GET /api/v1/healthz` with retry backoff.
+  2. Asserts container readiness via `GET /api/v1/ready`.
+  3. Executes functional synthetic monitor creation transaction (`POST /api/v1/monitors`).
+  4. Measures round-trip HTTP latency, asserting P99 SLA is strictly under 300ms.
+* **Self-Healing Action:** Returns exit code `1` upon any probe failure, instructing GitHub Actions to trigger immediate container rollback.
+
+### 2. Database Backup & Cryptographic Checksum (`scripts/backup_db.sh`)
+* **Integrity Guarantee:** Takes an atomic snapshot of the relational database.
+* **Cryptographic Verification:** Generates a SHA-256 integrity checksum file and verifies digest consistency before saving.
+* **Retention Policy:** Automatically identifies and prunes backup archives older than 7 days.
+
+### 3. Auto-Scaling Stress Engine (`scripts/load_test.js`)
+* **Execution:** Run with `k6 run scripts/load_test.js`.
+* **Behavior:** Ramps up concurrent virtual users from 50 to 400 against the ALB to force CPU utilization past 70%, triggering AWS Auto Scaling scale-out.
+
+---
+
+## AWS Production Infrastructure Specification
+
+The application is deployed across two AWS Availability Zones (`us-east-1a` and `us-east-1b`) in a highly available, multi-tier Virtual Private Cloud:
+
+1. **Virtual Private Cloud (VPC):**
+   * Primary CIDR: `10.0.0.0/16`.
+   * Public Subnet 1A: `10.0.1.0/24` | Public Subnet 1B: `10.0.2.0/24`.
+   * Private Subnet 1A: `10.0.10.0/24` | Private Subnet 1B: `10.0.20.0/24`.
+   * Internet Gateway attached to Public Subnets. Dedicated NAT Gateways in each AZ provide secure egress for private subnets.
 2. **Security Groups:**
-   * `sg-pulsewatch-alb`: Ingress port 80/443 from `0.0.0.0/0`.
-   * `sg-pulsewatch-instances`: Ingress port 80/8000 **strictly from `sg-pulsewatch-alb`**. Port 22 SSH is **completely disabled**.
-3. **IAM Roles & Access:**
-   * GitHub Actions: Role assumed via GitHub OIDC provider (`token.actions.githubusercontent.com`).
-   * EC2 Instances: Attached `AmazonSSMManagedInstanceCore` for SSH-less terminal access via AWS SSM Session Manager.
-4. **Auto Scaling Group & Launch Template:**
-   * Amazon Linux 2023 minimal AMI with Docker pre-installed in UserData.
-   * Minimum: 2, Maximum: 4, Desired: 2 instances spanning `us-east-1a` and `us-east-1b`.
+   * `sg-pulsewatch-alb`: Ingress allowed on ports 80/443 from `0.0.0.0/0`.
+   * `sg-pulsewatch-instances`: Ingress allowed on port 80 **strictly from `sg-pulsewatch-alb`**. Port 22 (SSH) is completely blocked; all administrative access is handled via AWS Systems Manager Session Manager.
+3. **Application Load Balancer (ALB):**
+   * Multi-AZ Internet-facing ALB with cross-zone load balancing enabled.
+   * Target Group configured with HTTP health checks on `/api/v1/healthz` (Interval: 15s, Healthy Threshold: 2, Unhealthy Threshold: 2).
+4. **Auto Scaling Group (ASG):**
+   * Minimum: 2 instances | Maximum: 4 instances | Desired: 2 instances spanning `us-east-1a` and `us-east-1b`.
    * Target Tracking Policy: `ASGAverageCPUUtilization` set to **70%**.
-5. **Application Load Balancer:**
-   * Internet-facing ALB with Target Group pointing to EC2 instances on port 80.
-   * Health Check Path: `/api/v1/healthz` (Interval: 15s, Healthy Threshold: 2, Unhealthy Threshold: 2).
-6. **CloudWatch Alarms & SNS Notification:**
-   * Alarm 1: `PulseWatch-UnhealthyHostCount` (Triggers when `UnHealthyHostCount >= 1` for 1 evaluation period).
-   * Alarm 2: `PulseWatch-HighCPU` (Triggers when `CPUUtilization > 75%` for 2 minutes).
-   * Actions: Dispatches instant alert to SNS topic `pulsewatch-incident-alerts`.
+   * Launch Template uses Amazon Linux 2023 minimal AMI with Docker Compose configured in UserData.
+5. **Observability & Alerting:**
+   * Centralized logging configured via CloudWatch Log Groups.
+   * Alarm 1: `PulseWatch-UnhealthyTargetCount` (triggers when `UnHealthyHostCount >= 1`).
+   * Alarm 2: `PulseWatch-HighCPU` (triggers when `CPUUtilization > 75%` for 2 minutes).
+   * Notifications: Both alarms publish to SNS topic `pulsewatch-incident-alerts` for instant notification.
 
 ---
 
-## 💥 Failure Injection & Rollback Demonstration (Requirement 4, 8 & 9)
+## Demonstrations & Viva Runbook
 
-### 1. Deliberate Failure Demonstration
-1. Open the **DevOps Lab** tab in the PulseWatch UI.
-2. Click **Inject Failure (Trigger 503 Alarm)**.
-3. `/api/v1/healthz` immediately returns HTTP 503.
-4. Within 30 seconds, the AWS Application Load Balancer marks the target **UNHEALTHY**.
-5. CloudWatch Alarm fires and sends an alert email via Amazon SNS.
-6. Click **Restore Instance Health** to verify automated recovery without dropping active connections.
+### 1. High Availability & Failure Recovery
+1. Open the PulseWatch dashboard in a browser.
+2. In the AWS Console or via the **DevOps Lab** interface, terminate an EC2 instance in `us-east-1a` or click **Inject Failure (Trigger 503 Alarm)**.
+3. Observe the Application Load Balancer detecting the failure within 15 seconds, taking the unhealthy instance out of rotation.
+4. Active user sessions remain completely uninterrupted as the second instance in `us-east-1b` serves all traffic without downtime.
+5. The Auto Scaling Group launches a healthy replacement instance automatically.
 
-### 2. Auto-Scaling Demonstration
-1. Run `k6 run scripts/load_test.js` or click **Dispatch CPU Stress Spike** in the DevOps Lab.
-2. Observe CPU utilization climbing past 70% in CloudWatch Metrics.
-3. Auto Scaling Group launches 2 additional instances in private subnets across both AZs (Scale-Out).
-4. After load drops, ASG gracefully terminates extra instances (Scale-In).
+### 2. Auto-Scaling Under Load
+1. Launch the load test script:
+   ```bash
+   k6 run scripts/load_test.js
+   ```
+2. Navigate to CloudWatch Metrics to observe CPU utilization exceeding the 70% target.
+3. Within 3 minutes, the Auto Scaling Group initiates a Scale-Out event, launching 2 additional instances across both AZs (total: 4 instances).
+4. Once the load test terminates, the target tracking policy gracefully cools down and scales the group back in to 2 instances.
 
-### 3. Automated & Manual Rollback Demonstration
-* **Automatic:** Merge a PR that breaks `/api/v1/healthz`. Stage 11 deploys it, Stage 12 smoke test fails, and the pipeline immediately redeploys the previous ECR image.
-* **Manual:** Go to GitHub Actions → Select **Manual Emergency Rollback Workflow** → Enter target image tag (e.g. `v1.0.0-stable`) → Click **Run Workflow**.
+### 3. Automated & Manual Rollback
+* **Automated Rollback:** Pushing a commit that breaks `/api/v1/healthz` causes Stage 12 (`smoke_test.sh`) to exit with code `1`. GitHub Actions immediately intercepts this failure and re-deploys the previous stable ECR image digest.
+* **Manual Emergency Rollback:** Navigate to **Actions** → **Manual Emergency Rollback Workflow** → enter the target version (e.g. `v1.0.0`) → click **Run workflow**.
 
 ---
 
-## 🧹 Teardown Guide
+## Engineering Team & Contribution Ledger
+
+| Member | Contact | Ownership & Contributions |
+| :--- | :--- | :--- |
+| **Jabeen Zahra** | `kaneezezahra313@gmail.com` | **Architecture, Microservices & Frontend Platform Lead**<br>• Designed React 18 observability interface, 3D topology visualizer & status portal.<br>• Engineered FastAPI REST API with health probes (`/healthz`, `/live`, `/ready`).<br>• Implemented GitHub Actions CI Stages 1–4 and root Docker Compose setup. |
+| **Fatima Ijaz** | `f6618568@gmail.com` | **DevSecOps, Security Auditing & Container Hardening Specialist**<br>• Hardened Alpine multi-stage Dockerfiles with unprivileged users (`appuser`, `nginx`).<br>• Integrated Gitleaks secret scanner, Snyk dependency audits, and Trivy CVE scanning.<br>• Authored `SECURITY.md`, ShellCheck-compliant `scripts/backup_db.sh`, and Dependabot policy. |
+| **Mirfaq Javaid** | `mirfaqjavaid@gmail.com` | **Cloud Infrastructure, Observability & Continuous Delivery Lead**<br>• Configured AWS Dual-AZ VPC, subnets, ALB routing, and Auto Scaling target tracking.<br>• Built OIDC IAM authentication, Amazon ECR immutable versioning, and rolling updates.<br>• Authored Stage 12 `scripts/smoke_test.sh` with automated rollback and k6 load testing script. |
+
+---
+
+## Infrastructure Teardown
 
 ```bash
 # Terminate local stack
 docker compose down -v
 
-# AWS Infrastructure Cleanup
+# AWS Resource Decommissioning
 aws autoscaling delete-auto-scaling-group --auto-scaling-group-name pulsewatch-asg --force-delete
 aws elbv2 delete-load-balancer --load-balancer-arn <ALB_ARN>
 aws ec2 delete-vpc --vpc-id <VPC_ID>
 ```
-
