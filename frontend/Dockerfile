@@ -14,7 +14,7 @@ RUN npm run build
 # ==========================================
 # Stage 2: Minimal Nginx Runtime (Non-root)
 # ==========================================
-FROM nginx:1.27.2-alpine AS runtime
+FROM nginx:1.31.0-alpine AS runtime
 
 LABEL maintainer="PulseWatch Team <kaneezezahra313@gmail.com>" \
       version="1.0.0" \
